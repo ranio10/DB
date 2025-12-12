@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>취소 이력 상세</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>취소 이력 상세</h1>
+    <p>
+      <a href="admin.html">← 관리자 통계 페이지로</a>
+    </p>
+  </header>
+
+  <main>
+    <section class="admin-section">
+      <h2 id="title"></h2>
+      <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+          <tr>
+            <th>취소 ID</th>
+            <th>취소 일시</th>
+            <th>경기 정보</th>
+            <th>좌석</th>
+            <th>가격</th>
+            <th>예매 ID</th>
+            <th>예매 일시</th>
+            <th>예매 상태</th>
+            <th>취소 사유</th>
+          </tr>
+        </thead>
+        <tbody id="history-tbody"></tbody>
+      </table>
+      <p id="empty-msg" style="display:none; margin-top:8px;">
+        해당 사용자/경기에 대한 취소 이력이 없습니다.
+      </p>
+    </section>
+  </main>
+
+  <script src="cancel_history.js"></script>
+</body>
+</html>

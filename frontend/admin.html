@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>관리자 페이지 - 야구 예매 시스템</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* 관리자 페이지 전용 살짝 꾸미기 */
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-color: #1e88e5;
+      color: white;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    header .right-area {
+      font-size: 14px;
+    }
+
+    header a {
+      color: #fff;
+      text-decoration: underline;
+      margin-left: 12px;
+    }
+
+    main {
+      padding: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    section {
+      background-color: white;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+
+    section h2 {
+      margin-top: 0;
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 6px 8px;
+      text-align: center;
+    }
+
+    table th {
+      background-color: #f0f0f0;
+    }
+
+    .empty-msg {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>관리자 페이지 - 야구 예매 시스템</h1>
+    <div class="right-area">
+      <span id="admin-info"></span>
+      <a href="index.html">사용자 메인으로</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. 경기별 통계 영역 -->
+    <section>
+      <h2>경기별 통계 (점유율 / 매출 / 예매 건수)</h2>
+      <table id="stats-table">
+        <thead>
+          <tr>
+            <th>경기 ID</th>
+            <th>날짜</th>
+            <th>구장</th>
+            <th>총 좌석 수</th>
+            <th>생성된 좌석 수</th>
+            <th>예약 좌석 수</th>
+            <th>좌석 점유율(%)</th>
+            <th>총 매출</th>
+            <th>예매 건수</th>
+          </tr>
+        </thead>
+        <tbody id="stats-tbody"></tbody>
+      </table>
+      <p class="empty-msg" id="stats-empty" style="display:none;">
+        통계 데이터가 없습니다.
+      </p>
+    </section>
+
+    <!-- 2. 이상 예매 / 과도한 취소 사용자 -->
+    <section>
+      <h2>이상 예매 / 과도한 취소 사용자</h2>
+      <table id="abuse-table">
+        <thead>
+          <tr>
+            <th>사용자 ID</th>
+            <th>예약 ID</th>
+            <th>취소 횟수</th>
+          </tr>
+        </thead>
+        <tbody id="abuse-tbody"></tbody>
+      </table>
+      <p class="empty-msg" id="abuse-empty" style="display:none;">
+        이상 예매 후보가 없습니다.
+      </p>
+    </section>
+
+    <!-- 3. 취소 이력 목록 -->
+    <section>
+      <h2>취소 이력 상세</h2>
+      <table id="cancel-table">
+        <thead>
+          <tr>
+            <th>취소 ID</th>
+            <th>예매 ID</th>
+            <th>사용자 ID</th>
+            <th>취소일</th>
+            <th>사유</th>
+          </tr>
+        </thead>
+        <tbody id="cancel-tbody"></tbody>
+      </table>
+      <p class="empty-msg" id="cancel-empty" style="display:none;">
+        취소 이력이 없습니다.
+      </p>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

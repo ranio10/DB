@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>좌석 선택</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- index랑 톤 맞추려면 (가능하면) 헤더도 재사용 -->
+  <header class="top-bar">
+    <a class="brand" href="index.html" aria-label="홈으로">
+      <span class="brand__logo">⚾</span>
+      <span class="brand__text">
+        <strong class="brand__title">야구 경기 예매</strong>
+        <span class="brand__sub">좌석 선택</span>
+      </span>
+    </a>
+
+    <nav class="user-menu">
+      <a class="chip chip--ghost" href="index.html">← 경기 목록</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="section__head">
+        <h1 class="section__title">좌석 목록</h1>
+        <p id="match-title" class="section__sub"></p>
+      </div>
+
+      <!-- 필터/정렬 UI (JS 없어도 모양은 예쁨) -->
+      <div class="toolbar">
+        <div class="toolbar__left">
+          <span class="pill">✅ 예약 가능</span>
+          <span class="pill pill--danger">⛔ 예약됨</span>
+        </div>
+
+        <div class="toolbar__right">
+          <!-- 필요하면 seats.js에서 연결 -->
+          <select id="sort-select" class="select">
+            <option value="default">정렬: 기본</option>
+            <option value="price_asc">가격 낮은순</option>
+            <option value="price_desc">가격 높은순</option>
+          </select>
+        </div>
+      </div>
+
+      <ul id="seat-list" class="seat-grid"></ul>
+    </section>
+  </main>
+
+  <script src="seats.js"></script>
+</body>
+</html>

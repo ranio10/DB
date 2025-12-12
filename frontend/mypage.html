@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>마이페이지 - 나의 예매 내역</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>마이페이지</h1>
+    <p>
+      <span id="user-info"></span>
+      <a href="index.html">← 메인으로</a>
+    </p>
+  </header>
+
+  <main>
+    <section class="admin-section">
+      <h2>나의 예매 내역</h2>
+
+      <table id="my-res-table">
+        <thead>
+          <tr>
+            <th>예매 ID</th>
+            <th>경기</th>
+            <th>좌석</th>
+            <th>가격</th>
+            <th>예매일</th>
+            <th>상태</th>
+            <th>결제 방식</th>
+            <th>결제일</th>
+            <th>취소</th>
+          </tr>
+        </thead>
+        <tbody id="my-res-tbody">
+          <!-- JS로 채움 -->
+        </tbody>
+      </table>
+
+      <p id="my-res-empty" style="display:none; margin-top:8px;">
+        예매한 내역이 없습니다.
+      </p>
+    </section>
+  </main>
+
+  <script src="mypage.js"></script>
+</body>
+</html>
